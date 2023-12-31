@@ -1,0 +1,20 @@
+.posts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.post {
+  padding: 8px;
+}
+
+.post img {
+  max-width: 100%;
+}
+
+.search {
+  display: block;
+  width: 500px;
+  padding: 8px;
+  font-size: 24px;
+  margin: 8px auto;
+}
