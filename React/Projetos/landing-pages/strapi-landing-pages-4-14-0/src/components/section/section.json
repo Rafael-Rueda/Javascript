@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_section_sections",
+  "info": {
+    "displayName": "Section",
+    "icon": "emotionHappy",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "richtext",
+      "required": true,
+      "minLength": 3
+    },
+    "type": {
+      "type": "string",
+      "required": true,
+      "regex": "^(two-column|one-column|gallery)$"
+    },
+    "background": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "sectionID": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    }
+  }
+}

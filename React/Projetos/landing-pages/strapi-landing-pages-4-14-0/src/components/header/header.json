@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_header_headers",
+  "info": {
+    "displayName": "Header",
+    "icon": "bold"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "string",
+      "required": true,
+      "maxLength": 255
+    }
+  }
+}
