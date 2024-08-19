@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Card</title>
+    <style>
+        .student-card {
+            font-family: Arial, sans-serif;
+            display: flex;
+            width: 600px;
+            height: 300px;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .right-section {
+            width: 70%;
+            padding: 20px;
+            background-color: #FFFFFF;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            position: relative;
+        }
+
+        .left-section {
+            width: 30%;
+            background-color: #9DBD8B;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #003399;
+        }
+
+        .student-info {
+            margin-bottom: 20px;
+        }
+
+        .student-info p {
+            margin: 5px 0;
+            font-size: 18px;
+        }
+
+        .qr-code {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .qr-code img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .issue-info {
+            position: absolute;
+            bottom: 20px;
+            font-size: 14px;
+        }
+
+        .clip-escola-logo img {
+            width: 120px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="student-card">
+        <div class="left-section">
+            <div class="clip-escola-logo">
+                <img src="clip-escola-logo.png" alt="ClipEscola">
+            </div>
+            <div class="qr-code">
+                <img src="qr-code-placeholder.png" alt="QR Code">
+            </div>
+        </div>
+        <div class="right-section">
+            <h2 class="card-title">CARTEIRINHA DO ESTUDANTE</h2>
+            <div class="student-info">
+                <p><strong>Carolina Souza</strong></p>
+                <p>Escola Exemplo</p>
+                <p>2022 | Turma(s): Pré A</p>
+                <p>Nº Carteirinha: 123456789</p>
+            </div>
+            <div class="issue-info">
+                <p>Emissão em: 06/07/2022 10:47:18</p>
+                <p>Código de Uso: 3655</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

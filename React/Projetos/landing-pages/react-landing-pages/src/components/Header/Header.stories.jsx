@@ -5,7 +5,7 @@ import { GlobalStyles } from '../../global/styles/globalStyles';
 import { theme } from '../../global/styles/theme';
 
 const meta = {
-    title: 'Footer',
+    title: 'Header',
     component: Header,
     args: {
         children: 'My awesome header !',
