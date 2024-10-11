@@ -1,0 +1,50 @@
+:root {
+    --background-color: #121212;
+    --primary-color: #1e3a8a; /* Dark Blue */
+    --secondary-color: #2563eb; /* Blue */
+    --accent-color: #3b82f6; /* Light Blue */
+    --text-color: #e0e0e0; /* Light Grey */
+    --siren-color: #ff4500; /* Siren Red */
+    --wraith-color: #4b0082; /* Wraith Indigo */
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+.header {
+    background-color: var(--primary-color);
+    padding: 1rem;
+    text-align: center;
+}
+
+.footer {
+    background-color: var(--wraith-color);
+    padding: 1rem;
+    text-align: center;
+}
+
+.button {
+    background-color: var(--siren-color);
+    border: none;
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: var(--secondary-color);
+}
