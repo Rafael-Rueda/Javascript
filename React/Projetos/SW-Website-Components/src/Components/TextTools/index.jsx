@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './index.css';
 import TextArea from './TextArea';
 import * as TTFunctions from '../../Functions/TextTools/functions.js';
+import Submission from './Submission/index.jsx';
 
 const TextTools = () => {
     const [text, setText] = useState(localStorage.getItem('text') || '');
@@ -27,7 +28,7 @@ const TextTools = () => {
                 <button onClick={() => TTFunctions.handleItalic(text, setText)}><i className="fas fa-italic"></i></button>
                 <button onClick={() => TTFunctions.handleCode(text, setText)}><i className="fas fa-code"></i></button>
                 <button onClick={() => togglePreview(text)}>
-                    {showPreview ? 'Hide Preview' : 'Show Preview'}
+                    {showPreview ? 'Esconder pre-visualizacao' : 'Mostrar pre-visualizacao'}
                 </button>
             </div>
             {showPreview ? (
@@ -38,6 +39,7 @@ const TextTools = () => {
             ) : (
                 <TextArea text={text} setText={setText} />
             )}
+            <Submission />
         </div>
     );
 };
