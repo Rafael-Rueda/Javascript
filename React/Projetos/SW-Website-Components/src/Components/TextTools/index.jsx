@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './index.css';
 import TextArea from './TextArea';
-import * as TTFunctions from '../../Functions/TextTools/functions.js';
+import * as TTFunctions from '../../Functions/TextTools/functions';
 import Submission from './Submission/index.jsx';
+import { TextCommentContext } from '../../Contexts/TextCommentContext/TextComment';
 
 const TextTools = () => {
-    const [text, setText] = useState(localStorage.getItem('text') || '');
+
+    const {text, setText} = useContext(TextCommentContext);
 
     const renderMarkdown = (markdown) => {
         return markdown
@@ -37,7 +39,7 @@ const TextTools = () => {
                     dangerouslySetInnerHTML={{ __html: renderMarkdown(text) }}
                 />
             ) : (
-                <TextArea text={text} setText={setText} />
+                <TextArea/>
             )}
             <Submission />
         </div>

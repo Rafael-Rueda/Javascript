@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './index.css';
 import { setLocalStorageTextTools } from '../../../Functions/global/localstorage';
+import { TextCommentContext } from '../../../Contexts/TextCommentContext/TextComment';
 
-const TextArea = ({text, setText}) => {
+const TextArea = () => {
+    const {text, setText} = useContext(TextCommentContext);
+
     return (
         <textarea 
         value={text} 
