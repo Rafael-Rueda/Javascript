@@ -1,11 +1,11 @@
 import React from 'react';
 import './index.css';
 
-const PostInformation = () => {
+const PostInformation = ({title, content}) => {
     return (
         <div>
-            <h1>Post Information</h1>
-            <p>This is a basic React component.</p>
+            <h1>{title}</h1>
+            <p>{content}</p>
         </div>
     );
 };

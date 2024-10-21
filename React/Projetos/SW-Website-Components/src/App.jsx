@@ -1,17 +1,26 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Routes, RouterProvider, createBrowserRouter } from 'react-router-dom';
 import './index.css';
-import PostInformation from './Components/PostInformation';
-import TextTools from './Components/TextTools';
 import { TextCommentProvider } from './Contexts/TextCommentContext/TextComment';
+import PostsPage from './Pages/Posts';
+import Post from './Pages/Post';
+
+const router = createBrowserRouter([
+  {
+    path: 'posts/',
+    element: <PostsPage />,
+  },
+  {
+    path: 'post/:id',
+    element: <Post />,
+  }
+]);
 
 function App() {
   return (
-    <>
-        <TextCommentProvider>
-          <PostInformation />
-          <TextTools />
-        </TextCommentProvider>
-    </>
+      <TextCommentProvider>
+        <RouterProvider router={router} />
+      </TextCommentProvider>
   );
 }
 
