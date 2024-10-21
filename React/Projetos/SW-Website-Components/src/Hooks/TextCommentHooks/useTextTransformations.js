@@ -37,7 +37,7 @@ const useTextTransformations = (textAreaRef) => {
     };
 
     const handleCode = () => {
-        transformText((selectedText) => `\`${selectedText}\``);
+        transformText((selectedText) => `\`\`\`${selectedText}\`\`\``);
     };
 
     const handleUpperCase = () => {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/default-highlight';
+import { darcula } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 const useRenderMarkdown = () => {
     const [markdown, setMarkdown] = useState('');
@@ -14,8 +14,14 @@ const useRenderMarkdown = () => {
             code: []
         };
 
-        const processedMarkdown = markdown.replace(/`(.*?)`/gs, (match, p1) => {
-            elements['code'].push(p1); // Store the code content
+        let language = '';
+
+        const processedMarkdown = markdown.replace(/```(.*?)```/gs, (match, p1) => {
+            language = match.split('```')[1].includes('\n') ? match.split('```')[1].split('\n')[0] : match.split('```')[1].split(' ')[0]; // Get the language for syntax highlighting
+            
+            elements['code'].push(p1.replace(language, '')); // Store the code content
+
+
             return `{{CODE_BLOCK_${elements['code'].length - 1}}}`; // Replace with a placeholder
         });
 
@@ -25,7 +31,7 @@ const useRenderMarkdown = () => {
 
             .replace(/\*(.*?)\*/gs, (match, p1) => { elements['italic'].push((<em>{p1}</em>)); return `{{ITALIC_BLOCK_${elements['italic'].length - 1}}}` }) // Italic transformation
 
-            .replace(/\n/g, (match) => { elements['linebreak'].push((<br/>)); return `{{LINEBREAK_BLOCK_${elements['linebreak'].length - 1}}}` }); // Line breaks
+            .replace(/\n/g, (match) => { elements['linebreak'].push((<br />)); return `{{LINEBREAK_BLOCK_${elements['linebreak'].length - 1}}}` }); // Line breaks
 
         const semiFinalMarkdown = [];
 
@@ -37,7 +43,13 @@ const useRenderMarkdown = () => {
             } else if (element.includes('LINEBREAK_BLOCK')) {
                 semiFinalMarkdown.push(<span key={index}>{elements['linebreak'][parseInt(element.split('_')[2])]}</span>);
             } else if (element.includes('CODE_BLOCK')) {
-                semiFinalMarkdown.push(<span key={index}><code>{elements['code'][parseInt(element.split('_')[2])]}</code></span>);
+                semiFinalMarkdown.push(
+                    <span key={index}>
+                        <SyntaxHighlighter language={language} style={darcula}>
+                            {elements['code'][parseInt(element.split('_')[2])]}
+                        </SyntaxHighlighter>
+                    </span>
+                );
             } else {
                 semiFinalMarkdown.push(<span key={index}>{element}</span>);
             }
