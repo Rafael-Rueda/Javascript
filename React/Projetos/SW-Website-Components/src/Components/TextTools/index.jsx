@@ -3,36 +3,17 @@ import './index.css';
 import TextArea from './TextArea';
 import Submission from './Submission/index.jsx';
 import { TextCommentContext } from '../../Contexts/TextCommentContext/TextComment';
-import useTextTransformations from '../../Hooks/useTextTransformations.js';
+import useTextTransformations from '../../Hooks/TextCommentHooks/useTextTransformations.js';
+import useRenderMarkdown from '../../Hooks/TextCommentHooks/useRenderMarkdown.jsx';
 
 const TextTools = () => {
 
     const { text, setText } = useContext(TextCommentContext);
     const textAreaRef = useRef(null);
+
     const { handleBold, handleItalic, handleCode, handleUpperCase, handleLowerCase, handleReverseText } = useTextTransformations(textAreaRef);
 
-    const renderMarkdown = (markdown) => {
-        // First, handle code blocks
-        const codeBlocks = [];
-        const processedMarkdown = markdown.replace(/`(.*?)`/gs, (match, p1) => {
-            codeBlocks.push(p1); // Store the code content
-            return `{{CODE_BLOCK_${codeBlocks.length - 1}}}`; // Replace with a placeholder
-        });
-
-        // Then handle bold and italic, making sure not to affect placeholders
-        const formattedMarkdown = processedMarkdown
-            .replace(/\*\*(.*?)\*\*/gs, '<b>$1</b>') // Bold transformation
-            .replace(/\*(.*?)\*/gs, '<i>$1</i>') // Italic transformation
-            .replace(/\n/g, '<br />'); // Line breaks
-
-        // Restore code blocks
-        const finalMarkdown = formattedMarkdown.replace(/{{CODE_BLOCK_(\d+)}}/g, (match, p1) => {
-            return `<code>${codeBlocks[parseInt(p1)]}</code>`;
-        });
-
-        return finalMarkdown;
-    };
-
+    const { renderMarkdown } = useRenderMarkdown();
 
     const [showPreview, setShowPreview] = useState(false);
 
@@ -54,10 +35,9 @@ const TextTools = () => {
                 </button>
             </div>
             {showPreview ? (
-                <div
-                    className="preview"
-                    dangerouslySetInnerHTML={{ __html: renderMarkdown(text) }}
-                />
+                <div className="preview">
+                    {renderMarkdown(text)}
+                </div>
             ) : (
                 <TextArea ref={textAreaRef} />
             )}

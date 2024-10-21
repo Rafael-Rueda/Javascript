@@ -1,6 +1,6 @@
 import { useContext } from 'react';
-import { TextCommentContext } from '../Contexts/TextCommentContext/TextComment';
-import { setLocalStorageTextTools } from '../Functions/global/localstorage';
+import { TextCommentContext } from '../../Contexts/TextCommentContext/TextComment';
+import { setLocalStorageTextTools } from '../../Functions/global/localstorage';
 
 // Custom hook to handle text transformations
 const useTextTransformations = (textAreaRef) => {
