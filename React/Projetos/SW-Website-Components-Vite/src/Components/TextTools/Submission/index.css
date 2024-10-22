@@ -1,0 +1,31 @@
+.submission-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.submission-button {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.submission-button:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+.submission-button:active {
+    background-color: var(--accent-color);
+    transform: scale(0.95);
+}
+
+.submission-button:disabled {
+    background-color: var(--wraith-color);
+    cursor: not-allowed;
+    opacity: 0.6;
+}
