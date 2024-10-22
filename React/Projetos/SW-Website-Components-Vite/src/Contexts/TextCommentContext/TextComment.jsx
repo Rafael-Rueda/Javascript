@@ -15,6 +15,7 @@ export const TextCommentProvider = ({ children }) => {
     );
 };
 
+// Prop Types
 TextCommentProvider.propTypes = {
     children: P.node,
 };
