@@ -42,7 +42,7 @@ const Comments = () => {
     return (
         <>
             <div className="comments-container">
-                <h2 className="comments-title">Comments</h2>
+                <h2 className="comments-title">Comentarios</h2>
                 <ul className="comments-list">
                     {comments.map((comment, index) => (
                         <li key={index} className="comment-item">{comment.body}</li>

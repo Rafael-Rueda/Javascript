@@ -1,8 +1,7 @@
 .cover-div {
     position: fixed;
-    top: 10px;
-    right: 10px;
-    z-index: 10;
+    bottom: 8px;
+    right: 8px;
 }
 
 .show-comment-menu {
@@ -12,11 +11,15 @@
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
+    position: fixed;
+    z-index: 20;
+    bottom: 8px;
+    right: 8px;
 }
 
 .comment-menu {
     position: fixed;
-    top: 50px;
+    bottom: 8px;
     right: 10px;
     background-color: var(--background-color);
     border: 1px solid var(--secondary-color);
