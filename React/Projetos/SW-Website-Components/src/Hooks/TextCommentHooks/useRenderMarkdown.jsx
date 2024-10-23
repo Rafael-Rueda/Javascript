@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/default-highlight';
+import SyntaxHighlighter from 'react-syntax-highlighter';
 import { darcula } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 const useRenderMarkdown = () => {

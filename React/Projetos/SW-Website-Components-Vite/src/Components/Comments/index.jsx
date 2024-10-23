@@ -36,13 +36,13 @@ const Comments = () => {
         return () => window.removeEventListener('scroll', handleCommentPagination);
     }, [amount, page]);
 
-    if (loading) return <div>Loading...</div>;
+    if (loading) return <div>Carregando...</div>;
     if (error) return <div>Error: {error.message}</div>;
 
     return (
         <>
             <div className="comments-container">
-                <h2 className="comments-title">Comentarios</h2>
+                <h2 className="comments-title">Comentários</h2>
                 <ul className="comments-list">
                     {comments.map((comment, index) => (
                         <li key={index} className="comment-item">{comment.body}</li>

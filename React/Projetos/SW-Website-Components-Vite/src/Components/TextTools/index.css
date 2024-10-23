@@ -67,6 +67,7 @@
     overflow-wrap: break-word;
     overflow-y: scroll;
     text-align: left;
+    font-size: 2em;
 }
 
 .submission {
