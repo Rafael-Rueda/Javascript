@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import PostInformation from '../../Components/PostInformation';
 import TextTools from '../../Components/TextTools';
+import Comments from '../../Components/Comments';
 
 const Post = () => {
     const { id } = useParams();
@@ -34,7 +35,7 @@ const Post = () => {
     return (
         <>
             <PostInformation title={post.title} content={post.body} />
-            <TextTools />
+            <Comments />
         </>
     );
 };

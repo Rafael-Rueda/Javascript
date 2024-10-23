@@ -1,5 +1,5 @@
 import React from 'react';
-import Post from '../../Components/PostInformation';
+import PostInformation from '../../Components/PostInformation';
 
 const PostsPage = () => {
     const posts = [
@@ -11,7 +11,7 @@ const PostsPage = () => {
         <div className="posts-page">
             <h1>Posts</h1>
             {posts.map((post, index) => (
-                <Post key={index} title={post.title} content={post.content} />
+                <PostInformation key={index} title={post.title} content={post.content} />
             ))}
         </div>
     );

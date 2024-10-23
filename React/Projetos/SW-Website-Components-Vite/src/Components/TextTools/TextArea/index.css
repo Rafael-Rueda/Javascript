@@ -5,6 +5,7 @@ textarea {
     width: 90vw;
     height: 50vh;
     background-color: #f0f0f0;
+    color: var(--black);
     border: none;
     padding: 10px;
     box-sizing: border-box;

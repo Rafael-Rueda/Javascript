@@ -1,0 +1,33 @@
+.comments-container {
+    background-color: var(--background-color);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.comments-title {
+    color: var(--primary-color);
+    font-size: 24px;
+    margin-bottom: 16px;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 8px;
+}
+
+.comments-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.comment-item {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    padding: 12px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.comment-item:hover {
+    background-color: var(--accent-color);
+}

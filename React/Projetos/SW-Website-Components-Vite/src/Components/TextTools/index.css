@@ -1,42 +1,39 @@
-.preview {
-    width: 90%;
-    padding: 12px 16px;
-    margin: 16px auto;
-    border-radius: 8px;
-    border: 1px solid var(--primary-color);
+.cover-div {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+}
+
+.show-comment-menu {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.comment-menu {
+    position: fixed;
+    top: 50px;
+    right: 10px;
     background-color: var(--background-color);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: left;
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 9;
 }
 
-.preview h1 {
-    font-size: 20px;
-    margin-bottom: 8px;
-    color: var(--text-color);
-}
-
-.preview p {
-    font-size: 14px;
-    color: var(--text-color);
-    line-height: 1.5;
-}
-
-.preview img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 12px 0;
+.comment-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .toolbar {
     display: flex;
-    width: 90%;
-    margin: auto;
-    gap: 8px;
-    align-items: flex-start;
-    padding: 8px 16px;
-    background-color: var(--primary-color);
-    border-bottom: 1px solid var(--border-color);
+    gap: 5px;
 }
 
 .toolbar button {
@@ -46,14 +43,30 @@
     border-radius: 4px;
     padding: 8px 12px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 .toolbar button:hover {
     background-color: var(--secondary-color);
+    transform: scale(1.05);
 }
 
-.toolbar .title {
-    font-size: 18px;
-    color: var(--title-color);
+.preview {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 90vw;
+    min-width: 90vw;
+    max-height: 50vh;
+    display: block;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    overflow-y: scroll;
+    text-align: left;
+}
+
+.submission {
+    display: flex;
+    justify-content: flex-end;
 }

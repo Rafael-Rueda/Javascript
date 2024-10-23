@@ -13,6 +13,7 @@
     /* Siren Red */
     --wraith-color: #4b0082;
     /* Wraith Indigo */
+    --black: black;
 
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
@@ -65,50 +66,4 @@ a:hover {
 
 .button:hover {
     background-color: var(--secondary-color);
-}
-
-@media (prefers-color-scheme: light) {
-    body {
-        background-color: var(--text-color);
-        color: var(--background-color);
-    }
-    
-    a {
-        color: var(--accent-color);
-    }
-    
-    a:hover {
-        color: var(--secondary-color);
-    }
-    
-    .header {
-        background-color: var(--primary-color);
-    }
-    
-    .footer {
-        background-color: var(--wraith-color);
-    }
-    
-    .button {
-        background-color: var(--siren-color);
-        color: var(--text-color);
-    }
-    
-    .button:hover {
-        background-color: var(--secondary-color);
-    }
-
-    .preview {
-        color: var(--background-color);
-        background-color: var(--text-color);
-    }
-    .preview button {
-        background-color: var(--text-color);
-        color: var(--siren-color);
-    }
-
-    .toolbar button {
-        background-color: var(--primary-color);
-        color: var(--text-color);
-    }
 }
